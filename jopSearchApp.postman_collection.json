@@ -1,0 +1,1116 @@
+{
+	"info": {
+		"_postman_id": "b5455686-99f2-4bfd-ad2c-416b5d954048",
+		"name": "jopSearchApp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36024768"
+	},
+	"item": [
+		{
+			"name": "authAPIs",
+			"item": [
+				{
+					"name": "signUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\":\"Dina\",\r\n    \"lastName\":\"Reda\",\r\n    \"email\":\"dr474077@gmail.com\",\r\n    \"password\":\"fake@Password1\",\r\n    \"gender\":\"Female\",\r\n    \"DOB\":\"2001-02-26T23:50:48.607+00:00\",\r\n    \"mobileNumber\":\"01280344851\",\r\n    \"role\":\"User\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/auth/signUp",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"auth",
+								"signUp"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "confirmOTP",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"dr473079@gmail.com\",\r\n    \"code\":\"5158\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/auth/confirmOTP",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"auth",
+								"confirmOTP"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"dr473078@gmail.com\",\r\n    \"password\":\"fake@Password2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/auth/signIn",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"auth",
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgetPassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"dr473079@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/auth/forgetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"auth",
+								"forgetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resetPassword",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"dr473079@gmail.com\",\r\n    \"newPassword\": \"fake@Password3\",\r\n    \"code\": \"3265\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/auth/resetPassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"auth",
+								"resetPassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "loginWithGmail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idToken\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2M2Y3YzRjZDI2YTFlYjJiMWIzOWE4OGY0NDM0ZDFmNGQ5YTM2OGIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDQ1NjI0NzI5ODk1LWVzY29nOTRnYWU3MzMwNTMycXBzdXNydWw3bzJjbGI1LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA0NTYyNDcyOTg5NS1lc2NvZzk0Z2FlNzMzMDUzMnFwc3VzcnVsN28yY2xiNS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwNDcxODk4NDA0ODU4OTkxNzE1OCIsImVtYWlsIjoiZHI0NzMwNzlAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTc0MDcwMjIyMCwibmFtZSI6IkRpbmEgUmVkYSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJQlFvYjdKVjBidXVGLV9mNGFWdVdQV2tENzBoRFYwTnM0VXBrTy00VHdLdEVyQ2c9czk2LWMiLCJnaXZlbl9uYW1lIjoiRGluYSIsImZhbWlseV9uYW1lIjoiUmVkYSIsImlhdCI6MTc0MDcwMjUyMCwiZXhwIjoxNzQwNzA2MTIwLCJqdGkiOiI2MzQwOGIyMmQ3MGYyM2M5OGU2YzVkNDA5NjMzYjAwM2EwNTkzMmIwIn0.Yjd6JFgSUErjpU1Oq1a3YWrpSeJtjnp72uLRRJpNmJBURXoK-vyGJLuizEp4_M4mlp-ucqWI2-ps2DZ26qC_U-WrSVWHMEqKRHFg8btTtkC2NPIB9Nz2dR2XkOXHEoPt2IvSXNKER8eCrigP5R2HBKxvevxrgFhooz82ihZ5np_IUG1pSTlLbiMh_TMLQbWw6K8HkgUVgrFV2-3TVsXHIFwaoI9RL6iX8dnjooQQXVSp3Na26kn83KShUYoqL4pOAf3CrtJhke8xQkqfpc1L2t4CUdo4RfxFojqg9ILLCAMuyiv9BGXyrG2ABW50FpEnign8v8VWcK81SCro2vhbuw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/auth/loginWithGmail",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"auth",
+								"loginWithGmail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signupWithGmail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idToken\":\"eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc2M2Y3YzRjZDI2YTFlYjJiMWIzOWE4OGY0NDM0ZDFmNGQ5YTM2OGIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIxMDQ1NjI0NzI5ODk1LWVzY29nOTRnYWU3MzMwNTMycXBzdXNydWw3bzJjbGI1LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiMTA0NTYyNDcyOTg5NS1lc2NvZzk0Z2FlNzMzMDUzMnFwc3VzcnVsN28yY2xiNS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjEwNDcxODk4NDA0ODU4OTkxNzE1OCIsImVtYWlsIjoiZHI0NzMwNzlAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5iZiI6MTc0MDcwMjIyMCwibmFtZSI6IkRpbmEgUmVkYSIsInBpY3R1cmUiOiJodHRwczovL2xoMy5nb29nbGV1c2VyY29udGVudC5jb20vYS9BQ2c4b2NJQlFvYjdKVjBidXVGLV9mNGFWdVdQV2tENzBoRFYwTnM0VXBrTy00VHdLdEVyQ2c9czk2LWMiLCJnaXZlbl9uYW1lIjoiRGluYSIsImZhbWlseV9uYW1lIjoiUmVkYSIsImlhdCI6MTc0MDcwMjUyMCwiZXhwIjoxNzQwNzA2MTIwLCJqdGkiOiI2MzQwOGIyMmQ3MGYyM2M5OGU2YzVkNDA5NjMzYjAwM2EwNTkzMmIwIn0.Yjd6JFgSUErjpU1Oq1a3YWrpSeJtjnp72uLRRJpNmJBURXoK-vyGJLuizEp4_M4mlp-ucqWI2-ps2DZ26qC_U-WrSVWHMEqKRHFg8btTtkC2NPIB9Nz2dR2XkOXHEoPt2IvSXNKER8eCrigP5R2HBKxvevxrgFhooz82ihZ5np_IUG1pSTlLbiMh_TMLQbWw6K8HkgUVgrFV2-3TVsXHIFwaoI9RL6iX8dnjooQQXVSp3Na26kn83KShUYoqL4pOAf3CrtJhke8xQkqfpc1L2t4CUdo4RfxFojqg9ILLCAMuyiv9BGXyrG2ABW50FpEnign8v8VWcK81SCro2vhbuw\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/auth/signupWithGmail",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"auth",
+								"signupWithGmail"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "userAPIs",
+			"item": [
+				{
+					"name": "updateAccount",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwNzk4MTc5LCJleHAiOjE3NDA4MDE3Nzl9.rm_B73YNO3QQRup84PLDp3x9Xzg__feHS4Q3T5jOspc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"DOB\":\"2000-02-26T23:50:48.607+00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/user/updateAccount",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"updateAccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePassword",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwNzk4MTc5LCJleHAiOjE3NDA4MDE3Nzl9.rm_B73YNO3QQRup84PLDp3x9Xzg__feHS4Q3T5jOspc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldPassword\":\"fake@Password1\",\r\n    \"newPassword\":\"fake@Password2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/user/updatePassword",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"updatePassword"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UploadProfilePic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwODA4MzgwLCJleHAiOjE3NDA4MTE5ODB9.VKTNZONTxcx6g3mH-rKYEKm6gmDFWK3dloDi439Fhw8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "attachment",
+									"type": "file",
+									"src": "/E:/wallpaper/771260cc-42f7-4e7e-99b8-4b625afe0a4b.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/user/UploadProfilePic",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"UploadProfilePic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "UploadCoverPic",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwODA4MzgwLCJleHAiOjE3NDA4MTE5ODB9.VKTNZONTxcx6g3mH-rKYEKm6gmDFWK3dloDi439Fhw8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "attachment",
+									"type": "file",
+									"src": "/E:/wallpaper/code.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/user/UploadCoverPic",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"UploadCoverPic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "anotherUserProfileData",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc3QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA1MjM2Y2U5MTAxZGJmZmUxYjAyIiwiaWF0IjoxNzQwODM5MTA5LCJleHAiOjE3NDA4NDI3MDl9.08mHPkgiuxmGmypyYskusFMccgEz-UgmT4mCOlaUIls",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/user/profile/67c104f2b9af718835e0f9cd",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"profile",
+								"67c104f2b9af718835e0f9cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteProfilePic",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwODQwMTcyLCJleHAiOjE3NDA4NDM3NzJ9.mQEFx2I3j06Ex3bVwk2ObhaCYp73gBsSpwI8eDpRzH0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/user/DeleteProfilePic",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"DeleteProfilePic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCoverPic",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwODQwMTcyLCJleHAiOjE3NDA4NDM3NzJ9.mQEFx2I3j06Ex3bVwk2ObhaCYp73gBsSpwI8eDpRzH0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/user/DeleteCoverPic",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"DeleteCoverPic"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "accountData",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc3QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA1MjM2Y2U5MTAxZGJmZmUxYjAyIiwiaWF0IjoxNzQwODk4MTUwLCJleHAiOjE3NDA5MDE3NTB9.aWcnZ9rudfJzz8ODtxYeQPhLiadD8DWniYhReYPdi9Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/user/accountData",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"accountData"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "softDelete",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc3QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA1MjM2Y2U5MTAxZGJmZmUxYjAyIiwiaWF0IjoxNzQwODk4MTUwLCJleHAiOjE3NDA5MDE3NTB9.aWcnZ9rudfJzz8ODtxYeQPhLiadD8DWniYhReYPdi9Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/user/softDelete/67c105236ce9101dbffe1b02",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"user",
+								"softDelete",
+								"67c105236ce9101dbffe1b02"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "companyAPIs",
+			"item": [
+				{
+					"name": "addCompany",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwODUzOTEwLCJleHAiOjE3NDA4NTc1MTB9.AGwP5qWZBgFr6DF02fXEcuYo2Kzwa3C_3GuyiHzFC_Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "companyName",
+									"value": "care company4",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "the company provide medical care",
+									"type": "text"
+								},
+								{
+									"key": "industry",
+									"value": "Health care",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "moharem bek",
+									"type": "text"
+								},
+								{
+									"key": "numberOfEmployees",
+									"value": "10-30",
+									"type": "text"
+								},
+								{
+									"key": "companyEmail",
+									"value": "dr473075@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "CreatedBy",
+									"value": "67c104f2b9af718835e0f9cd",
+									"type": "text"
+								},
+								{
+									"key": "HRs",
+									"value": "67c105236ce9101dbffe1b02",
+									"type": "text"
+								},
+								{
+									"key": "legalAttachment",
+									"type": "file",
+									"src": "/E:/wallpaper/Work day ,stay hydrated 😀.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/company/addCompany",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"company",
+								"addCompany"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCompany",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwODU2MzYyLCJleHAiOjE3NDA4NTk5NjJ9.pd7y3XBXIh46vZfyDs29Lawg2BAkTXMPvnJfWoTwoEU",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"description\":\"this is updated description\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/company/updateCompany/67c353991e8f35fe1662d834",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"company",
+								"updateCompany",
+								"67c353991e8f35fe1662d834"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "companySearch",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/company/companySearch/care company4",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"company",
+								"companySearch",
+								"care company4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadCompanyLogo",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwODYxMjU1LCJleHAiOjE3NDA4NjQ4NTV9.1bLN8oDvVQmyBiRTfNy10N8-OWkNdojFErgVwEM2wLk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Logo",
+									"type": "file",
+									"src": "/E:/wallpaper/code.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/company/uploadCompanyLogo/67c353991e8f35fe1662d834",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"company",
+								"uploadCompanyLogo",
+								"67c353991e8f35fe1662d834"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadCompanyCover",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwODYxMjU1LCJleHAiOjE3NDA4NjQ4NTV9.1bLN8oDvVQmyBiRTfNy10N8-OWkNdojFErgVwEM2wLk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "coverPic",
+									"type": "file",
+									"src": "/E:/wallpaper/Work aesthetic desktop wallpaper.jpeg"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/company/uploadCompanyCover/67c353991e8f35fe1662d834",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"company",
+								"uploadCompanyCover",
+								"67c353991e8f35fe1662d834"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCompanyLogo",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwODYxMjU1LCJleHAiOjE3NDA4NjQ4NTV9.1bLN8oDvVQmyBiRTfNy10N8-OWkNdojFErgVwEM2wLk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/company/DeleteCompanyLogo/67c353991e8f35fe1662d834",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"company",
+								"DeleteCompanyLogo",
+								"67c353991e8f35fe1662d834"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteCompanyCoverPic",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwODYxMjU1LCJleHAiOjE3NDA4NjQ4NTV9.1bLN8oDvVQmyBiRTfNy10N8-OWkNdojFErgVwEM2wLk",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/company/DeleteCompanyCoverPic/67c353991e8f35fe1662d834",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"company",
+								"DeleteCompanyCoverPic",
+								"67c353991e8f35fe1662d834"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletedCompany",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwODk5ODUwLCJleHAiOjE3NDA5MDM0NTB9.o0rHL_FRuWoiBIbcEivvbvncyTXKxVr8SG9SKziRF0U",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/company/softDelete/67c33b24b945db597171a8e1",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"company",
+								"softDelete",
+								"67c33b24b945db597171a8e1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "jopAPIs",
+			"item": [
+				{
+					"name": "addJop",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc3QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA1MjM2Y2U5MTAxZGJmZmUxYjAyIiwiaWF0IjoxNzQwODgzODgxLCJleHAiOjE3NDA4ODc0ODF9.MDqR4lGaPFQ9HW6Xff5JmanNBWoSHY8mBFjF-IiNa6I",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"jobTitle\":\"NodeJs back-end developer\",\r\n    \"jobLocation\":\"onsite\",\r\n    \"workingTime\":\"full-time\",\r\n    \"seniorityLevel\":\"Junior\",\r\n    \"jobDescription\":\"back-end developer deal with APIs\",\r\n    \"technicalSkills\":[ \"nodejs\" ],\r\n    \"softSkills\":[\"time management\" , \"team worker\"],\r\n    \"companyId\":\"67c33b24b945db597171a8e1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/jop/addJop",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"jop",
+								"addJop"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateJop",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc4QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA0ZjJiOWFmNzE4ODM1ZTBmOWNkIiwiaWF0IjoxNzQwODczODE1LCJleHAiOjE3NDA4Nzc0MTV9.4vcKvdLJrx99qpdBsI52skBgjKQbliH8aKHRRDZ6Pv4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"jobTitle\":\"back-end developer express,node js\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/jop/updateJop/67c38fc39ea62628b6debd1b",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"jop",
+								"updateJop",
+								"67c38fc39ea62628b6debd1b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteJop",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc3QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA1MjM2Y2U5MTAxZGJmZmUxYjAyIiwiaWF0IjoxNzQwODc0NTM4LCJleHAiOjE3NDA4NzgxMzh9.lJmEEaPg2GBUKzo5l3v-sxU3heERk5aBOJXdgb08RGg",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/jop/deleteJop/67c38fc39ea62628b6debd1b",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"jop",
+								"deleteJop",
+								"67c38fc39ea62628b6debd1b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getJobsOrSpecific",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc3QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA1MjM2Y2U5MTAxZGJmZmUxYjAyIiwiaWF0IjoxNzQwODgzODgxLCJleHAiOjE3NDA4ODc0ODF9.MDqR4lGaPFQ9HW6Xff5JmanNBWoSHY8mBFjF-IiNa6I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/company/care company",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"company",
+								"care company"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "matchjobs",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDczMDc3QGdtYWlsLmNvbSIsImlkIjoiNjdjMTA1MjM2Y2U5MTAxZGJmZmUxYjAyIiwiaWF0IjoxNzQwODgzODgxLCJleHAiOjE3NDA4ODc0ODF9.MDqR4lGaPFQ9HW6Xff5JmanNBWoSHY8mBFjF-IiNa6I",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3005/jop/matchjobs?workingTime=part-time",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"jop",
+								"matchjobs"
+							],
+							"query": [
+								{
+									"key": "workingTime",
+									"value": "part-time"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "applyToJob",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImRyNDc0MDc3QGdtYWlsLmNvbSIsImlkIjoiNjdjMzhmZjY5ZWE2MjYyOGI2ZGViZDIxIiwiaWF0IjoxNzQwODg5NTM0LCJleHAiOjE3NDA4OTMxMzR9.4sRz-i4MPO42TI4cL-ncGNiyyWALYl6iMSKIBo3BySQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userCV",
+									"type": "file",
+									"src": "/C:/Users/friends/Downloads/DINA REDA RESUME.pdf"
+								},
+								{
+									"key": "jobId",
+									"value": "67c3c93f50d3fdd8ad4d0c0b",
+									"type": "text"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:3005/jop/applyToJob",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"jop",
+								"applyToJob"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "applyStatus",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\":\"rejected\",\r\n     \"applicationId\":\"67c3deccc74217fdeb20ac21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/jop/applyStatus",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"jop",
+								"applyStatus"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dashboardAPIs",
+			"item": [
+				{
+					"name": "banedUser",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"AdminId\":\"67c38ff69ea62628b6debd21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/dashboard/banedUser/67c38ff69ea62628b6debd21",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"dashboard",
+								"banedUser",
+								"67c38ff69ea62628b6debd21"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "banCompany",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"AdminId\":\"67c38ff69ea62628b6debd21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/dashboard/banCompany/67c33b24b945db597171a8e1",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"dashboard",
+								"banCompany",
+								"67c33b24b945db597171a8e1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "approveCompany",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"AdminId\":\"67c38ff69ea62628b6debd21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3005/dashboard/approveCompany/67c33b24b945db597171a8e1",
+							"host": [
+								"localhost"
+							],
+							"port": "3005",
+							"path": [
+								"dashboard",
+								"approveCompany",
+								"67c33b24b945db597171a8e1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
